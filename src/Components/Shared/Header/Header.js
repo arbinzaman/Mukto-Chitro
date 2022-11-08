@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 
 const Header = () => {
+
+        const { user, logOut } = useContext(AuthContext);
+        const handleLogOut = () => {
+            logOut()
+                .then(() => { })
+                .catch(error => console.error('error'))
+        }
     return (
         <div>
             <nav>
@@ -13,10 +21,11 @@ const Header = () => {
                             </label>
                             <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                                 <li><Link to="/">Home</Link></li>
-                                <li><Link to="/">Services</Link></li>
+                                <li><Link to="/services">Services</Link></li>
                                 <li><Link to="/">My Revies</Link></li>
-                                <li><Link to="/blog">BLog</Link></li>
+                                <li><Link to="/blogs">BLog</Link></li>
                                 <li><Link to="/login">Login</Link></li>
+                                <li><Link to="/register">Register</Link></li>
                             </ul>
                         </div>
                     </div>
@@ -27,7 +36,7 @@ const Header = () => {
 
 
             
-                        {/* {
+                        {
                             user?.uid ?
                                 <>
                                     <span className=""><img src={user?.photoURL} title={user?.displayName} className=" ml-5 h-10 rounded-full" alt="" /></span>
@@ -35,10 +44,10 @@ const Header = () => {
                                 </>
                                 :
                                 <>
-                                    <Link to='/signIN' className="btn btn-ghost normal-case text-xl">Login</Link>
+                                    <Link to='/login' className="btn btn-ghost normal-case text-xl">Login</Link>
                                     <Link to='/register' className="btn btn-ghost normal-case text-xl">Register</Link>
                                 </>
-                        } */}
+                        }
 
 
                     </div>
