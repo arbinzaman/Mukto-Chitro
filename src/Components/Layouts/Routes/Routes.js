@@ -18,7 +18,7 @@ const router = createBrowserRouter([
         {
             path:'/',
             element:<Home></Home>,
-            loader:()=>fetch('http://localhost:5000/servicesforhome')
+            loader:()=>fetch('https://citro-golpo.vercel.app/servicesforhome')
             
         },
         {
@@ -39,18 +39,20 @@ const router = createBrowserRouter([
         {
             path:'/reviews',
             element:<Reviews></Reviews>,
+            loader:()=>fetch('https://citro-golpo.vercel.app/reviews')
 
         },
         { 
             path:'/services',
             element:<Services></Services>,
-            loader:()=>fetch('http://localhost:5000/services')
+            loader:()=>fetch('https://citro-golpo.vercel.app/services')
 
         },
+        
         {
             path: "/services/:id",
             loader: ({ params }) =>
-              fetch(`http://localhost:5000/services/${params.id}`),
+              fetch(`https://citro-golpo.vercel.app/services/${params.id}`),
             element: <ServiceDetails></ServiceDetails>
           },
       ]

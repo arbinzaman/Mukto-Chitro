@@ -1,4 +1,4 @@
-
+import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import UseTitle from '../../../Hooks/UseTitle';
 import ServicePage from './ServicePage';
@@ -8,16 +8,41 @@ const Services = () => {
     UseTitle("Service")
     const services = useLoaderData();
     // console.log(services);
-
+    const [user, setUser] = useState({});
 
     const handleAddService = event => {
         event.preventDefault();
-        const form = event.target;
-        const name = form.name.value;
-        const text = form.text.value;
-        const userAddService =(name,text);
-        console.log(userAddService);
+        console.log(user);
+
+
+        fetch("http://localhost:5000/services", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify(user),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                if (data.acknowledged) {
+                    // event.target.from.reset()
+                }
+            })
+            .catch((err) => console.log(err));
+
     }
+
+    const handleInputBlur = event => {
+        const value = event.target.value;
+        const field = event.target.name;
+        const newUser = { ...user }
+        newUser[field] = value;
+        setUser(newUser)
+    }
+
+
+
 
 
 
@@ -46,21 +71,23 @@ const Services = () => {
                     <div className="space-y-4">
                         <div>
                             <label htmlFor="text" className="block mb-2 text-sm">Field</label>
-                            <input type="name" name="name" id="name" placeholder="Custom Field Name" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 bg-base-300 text-black" />
+
+                            <input onChange={handleInputBlur} type="text" name="title" id="title" placeholder="Custom Field Name" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 bg-base-300 text-black" />
                         </div>
                         <div>
                             <div className="flex justify-between mb-2">
                                 <label htmlFor="text" className="text-sm">Text</label>
-                                
+
                             </div>
-                            <input type="text" name="password" id="text" placeholder="Describe Details" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 bg-base-300 text-black" />
+
+                            <input onChange={handleInputBlur} type="text" name="description" id="description" placeholder="Describe Details" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 bg-base-300 text-black" />
                         </div>
                     </div>
                     <div className="space-y-2">
                         <div>
                             <button type="submit" className="w-full px-8 py-3 font-semibold rounded-md dark:bg-violet-400 dark:text-gray-900">Submit</button>
                         </div>
-                        
+
                     </div>
                 </form>
             </div>
