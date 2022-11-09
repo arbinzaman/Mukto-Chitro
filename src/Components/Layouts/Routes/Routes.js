@@ -16,7 +16,7 @@ const router = createBrowserRouter([
         {
             path:'/',
             element:<Home></Home>,
-            loader:()=>fetch('https://citro-golpo.vercel.app/servicesforhome')
+            loader:()=>fetch('http://localhost:5000/servicesforhome')
             
         },
         {
@@ -37,7 +37,7 @@ const router = createBrowserRouter([
         { 
             path:'/services',
             element:<Services></Services>,
-            loader:()=>fetch('https://citro-golpo.vercel.app/services')
+            loader:()=>fetch('http://localhost:5000/services')
 
         },
       ]

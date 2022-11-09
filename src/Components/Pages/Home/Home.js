@@ -4,30 +4,32 @@ import Service from './Service';
 import Slider from './Slider';
 import HighLightSection from './HighLightSection';
 import Gallery from './Gallery';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
+import UseTitle from '../../../Hooks/UseTitle';
 
 const Home = () => {
     const homeServices = useLoaderData();
     // console.log(homeServices);
-
+    UseTitle("Home")
     return (
         <div>
-           <Slider></Slider>
-           <HighLightSection></HighLightSection>
-           <Gallery></Gallery>
-           {/* <Services></Services> */}
-           <div className='grid sm:grid-cols-3 gap-3 my-20' >
-            {
-                homeServices.map(homeService=><Service
-                    key={homeService._id}
-                    homeService={homeService}
-                ></Service>
-                    
-                    )
-            }
+            <Slider></Slider>
+            <HighLightSection></HighLightSection>
+            <Gallery></Gallery>
+            {/* <Services></Services> */}
+            <div className='grid md:grid-cols-3 gap-3 my-20' >
+                {
+                    homeServices.map(homeService => <Service
+                        key={homeService._id}
+                        homeService={homeService}
+                    ></Service>
 
-           </div>
-         
+                    )
+                }
+
+            </div>
+            <Link to='/services'><button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">See All</button></Link>
+
 
         </div>
     );

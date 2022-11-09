@@ -2,9 +2,11 @@ import React from 'react';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
+import UseTitle from '../../../Hooks/UseTitle';
 
 
 const Register = () => {
+    UseTitle("Register")
     const {createUser} = useContext(AuthContext);
 
 
