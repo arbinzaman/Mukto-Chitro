@@ -57,7 +57,7 @@ const router = createBrowserRouter([
         },
         { 
             path:'/services',
-            element:<PrivateRoute><Services></Services></PrivateRoute>,
+            element:<Services></Services>,
             loader:()=>fetch('https://citro-golpo.vercel.app/services')
 
         },
