@@ -25,7 +25,7 @@ const ReviewsPost = ({ review }) => {
                 })
         }
     }
-    // console.log(review);
+    
     return (
 
         <div className="container mb-10 flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md divide-gray-700 bg-white text-black">
