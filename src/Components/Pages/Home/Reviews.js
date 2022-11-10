@@ -10,11 +10,7 @@ const Reviews = () => {
     const [form, setForm] = useState({});
     const [reviews ,setReviews]= useState([]);
     const { user } = useContext(AuthContext);
-    // console.log(user); 
-
-    // const getReviewData = async()=>{
-    //   const response = await  fetch('https://citro-golpo.vercel.app/reviews')
-   
+  
 
 
     useEffect(()=>{
