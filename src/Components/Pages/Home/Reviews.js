@@ -14,7 +14,6 @@ const Reviews = () => {
 
     // const getReviewData = async()=>{
     //   const response = await  fetch('https://citro-golpo.vercel.app/reviews')
-    //     const data = await response.json();
    
 
 
