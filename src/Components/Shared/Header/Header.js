@@ -49,7 +49,7 @@ const Header = () => {
                         {
                             user?.uid ?
                                 <>
-                                    <span className=""><img src={user?.photoURL} title={user?.displayName} className=" ml-5 h-10 rounded-full" alt="" /></span>
+                                    <span className=""><img src={user?.photoURL} title={user?.displayName} className=" ml-5 h-10 sm:h2 rounded-full" alt="" /></span>
                                     <button onClick={handleLogOut} className="btn btn-ghost normal-case text-xl">Log Out</button>
                                 </>
                                 :

@@ -4,9 +4,10 @@ import Home from '../../Pages/Home/Home';
 import Blogs from '../../Pages/Blogs/Blogs';
 import Login from '../../Pages/Login/Login';
 import Register from '../../Pages/Register/Register';
-import Services from '../../Pages/Home/Services';
+import PrivateRoute from '../../PrivateRoute/PrivateRoute'
 import ServiceDetails from '../../Pages/Home/ServiceDetails';
 import Reviews from '../../Pages/Home/Reviews';
+import Services from '../../Pages/Home/Services';
 
 
 const router = createBrowserRouter([
@@ -38,13 +39,13 @@ const router = createBrowserRouter([
         },
         {
             path:'/reviews',
-            element:<Reviews></Reviews>,
+            element:<PrivateRoute><Reviews></Reviews></PrivateRoute>,
             loader:()=>fetch('https://citro-golpo.vercel.app/reviews')
 
         },
         { 
             path:'/services',
-            element:<Services></Services>,
+            element:<PrivateRoute><Services></Services></PrivateRoute>,
             loader:()=>fetch('https://citro-golpo.vercel.app/services')
 
         },
@@ -53,7 +54,7 @@ const router = createBrowserRouter([
             path: "/services/:id",
             loader: ({ params }) =>
               fetch(`https://citro-golpo.vercel.app/services/${params.id}`),
-            element: <ServiceDetails></ServiceDetails>
+            element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>
           },
       ]
     }
