@@ -35,7 +35,7 @@ const Reviews = () => {
 
 
         if (user?.uid) {
-            fetch("http://localhost:5000/reviews", {
+            fetch("https://citro-golpo.vercel.app/reviews", {
                 method: "POST",
                 headers: {
                     "content-type": "application/json",

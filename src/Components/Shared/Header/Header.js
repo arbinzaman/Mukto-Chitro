@@ -28,6 +28,7 @@ const Header = () => {
 
                                 <li><Link to="/services">Services</Link></li>
                                 <li><Link to="/reviews">My Reviews</Link></li>
+                                <li><Link to="/addService">Add Service</Link></li>
 
                                   </>   :<></>  
                                   }

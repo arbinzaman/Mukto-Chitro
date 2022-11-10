@@ -8,6 +8,7 @@ import PrivateRoute from '../../PrivateRoute/PrivateRoute'
 import ServiceDetails from '../../Pages/Home/ServiceDetails';
 import Reviews from '../../Pages/Home/Reviews';
 import Services from '../../Pages/Home/Services';
+import AddService from '../../Pages/Home/AddService';
 
 
 const router = createBrowserRouter([
@@ -35,6 +36,11 @@ const router = createBrowserRouter([
         {
             path:'/register',
             element:<Register></Register>,
+
+        },
+        {
+            path:'/addService',
+            element:<AddService></AddService>,
 
         },
         {
