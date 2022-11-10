@@ -1,5 +1,6 @@
-import React, { useContext, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
+// import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 import UseTitle from '../../../Hooks/UseTitle';
 import ReviewsPost from './ReviewsPost';
@@ -7,9 +8,24 @@ import ReviewsPost from './ReviewsPost';
 const Reviews = () => {
     UseTitle("Reviews")
     const [form, setForm] = useState({});
+    const [reviews ,setReviews]= useState([]);
     const { user } = useContext(AuthContext);
     // console.log(user); 
-    const reviews = useLoaderData();
+
+    // const getReviewData = async()=>{
+    //   const response = await  fetch('https://citro-golpo.vercel.app/reviews')
+    //     const data = await response.json();
+    //     return data;
+    // }
+
+
+    useEffect(()=>{
+        fetch('https://citro-golpo.vercel.app/reviews')
+        .then(res=>res.json())
+        .then(data=>setReviews(data))
+    },[])
+
+    // const reviews = useLoaderData();
     // console.log(reviews);
 
     const handleReviewSubmit = event => {
@@ -30,6 +46,7 @@ const Reviews = () => {
                 .then((data) => {
                     console.log(data);
                     if (data.acknowledged) {
+                        toast.success("Review Added Successfully");
                         form.reset();
                     }
                 })

@@ -40,7 +40,7 @@ const router = createBrowserRouter([
         {
             path:'/reviews',
             element:<PrivateRoute><Reviews></Reviews></PrivateRoute>,
-            loader:()=>fetch('https://citro-golpo.vercel.app/reviews')
+            // loader:()=>fetch('https://citro-golpo.vercel.app/reviews')
 
         },
         { 

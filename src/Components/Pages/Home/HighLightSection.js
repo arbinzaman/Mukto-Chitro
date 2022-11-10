@@ -9,7 +9,7 @@ const HighLightSection = () => {
                     <h1 className="text-5xl font-bold leading-none sm:text-6xl xl:max-w-3xl dark:text-gray-900">Capture Your Dream Moments With Us. </h1>
                     <p className="mt-6 mb-8 text-lg sm:mb-12 xl:max-w-3xl dark:text-gray-900">We are leading one of the best photography Industry in The Country, Product Shot, Bridal-Shot Or Any-Other Commercial Shot .We handle any kind of shoot ,</p>
                     <div className="flex flex-wrap justify-center">
-                        <button type="button" className="px-8 py-3 m-2 text-lg font-semibold rounded dark:bg-gray-800 dark:text-gray-50">Contact Us</button>
+                      <Link to='login'><button type="button" className="px-8 py-3 m-2 text-lg font-semibold rounded dark:bg-gray-800 dark:text-gray-50">Contact Us</button></Link>
                        <Link to='/blogs'> <button type="button" className="px-8 py-3 m-2 text-lg border rounded dark:border-gray-700 dark:text-gray-900">Blogs</button></Link>
                     </div>
                 </div>

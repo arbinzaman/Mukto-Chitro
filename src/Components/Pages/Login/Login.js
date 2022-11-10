@@ -15,7 +15,7 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
-    console.log(from);
+    // console.log(from);
 
     const handleUserNamePassword = event => {
         event.preventDefault();
@@ -64,8 +64,8 @@ const Login = () => {
                 <h1 className="text-2xl font-bold text-center text-black">Login</h1>
                 <form onSubmit={handleUserNamePassword} noValidate="" action="" className="space-y-6 ng-untouched ng-pristine ng-valid">
                     <div className="space-y-1 text-sm">
-                        <label htmlFor="username" className="block text-black">Username</label>
-                        <input type="text" name="username" id="username" placeholder="Username" className="w-full px-4 py-3 rounded-md border-gray-700 bg-light text-gray-100 focus:border-violet-400" />
+                        <label htmlFor="username" className="block text-black">email</label>
+                        <input type="email" name="email" id="email" placeholder="email" className="w-full px-4 py-3 rounded-md border-gray-700 bg-light text-gray-100 focus:border-violet-400" />
                     </div>
                     <div className="space-y-1 text-sm">
                         <label htmlFor="password" className="block text-black">Password</label>

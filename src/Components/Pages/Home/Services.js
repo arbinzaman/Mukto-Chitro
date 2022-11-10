@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import UseTitle from '../../../Hooks/UseTitle';
 import ServicePage from './ServicePage';
 
@@ -24,9 +25,10 @@ const Services = () => {
         })
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
+                // console.log(data);
                 if (data.acknowledged) {
                     // event.target.from.reset()
+                    toast.success("Added New Service");
                 }
             })
             .catch((err) => console.log(err));

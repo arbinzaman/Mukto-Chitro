@@ -14,10 +14,10 @@ const Register = () => {
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
-        const photoURL = form.photoURL.value;
+        
         const email = form.email.value;
         const password = form.password.value;
-        console.log(name, photoURL, email, password);
+        console.log(name, email, password);
         createUser(email, password)
         .then(result => {
             const user = result.user;
@@ -28,22 +28,22 @@ const Register = () => {
     }
     return (
         <div className='mt-10 mb-10'>
-            <div className=" mx-auto w-full max-w-md p-8 space-y-3 rounded-xl bg-base-300 dark:text-gray-100">
+            <div className=" mx-auto w-full max-w-md p-8 space-y-3 rounded-xl bg-base-300 text-black">
                 <h1 className="text-2xl font-bold text-center text-black ">Sign Up</h1>
                 <form onSubmit={handleSubmit} noValidate="" action="" className="space-y-6 ng-untouched ng-pristine ng-valid">
                     <div className="space-y-1 text-sm">
                         <label htmlFor="username" className="block text-black">Name</label>
-                        <input type="text" name="name" id="username" placeholder="Name" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
+                        <input type="text" name="name" id="username" placeholder="Name" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 text-black focus:dark:border-violet-400" />
                     </div>
                     <div className="space-y-1 text-sm">
-                        <label htmlFor="username" className="block dark:text-gray-400">Email</label>
-                        <input type="email" name="email" id="username" placeholder="Email" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
+                        <label htmlFor="username" className="block text-black">Email</label>
+                        <input type="email" name="email" id="username" placeholder="Email" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 text-black focus:dark:border-violet-400" />
                     </div>
                  
                     <div className="space-y-1 text-sm">
-                        <label htmlFor="password" className="block dark:text-gray-400">Password</label>
-                        <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
-                        <div className="flex justify-end text-xs dark:text-gray-400">
+                        <label htmlFor="password" className="block text-black">Password</label>
+                        <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 text-black focus:dark:border-violet-400" />
+                        <div className="flex justify-end text-xs text-black">
                             <a rel="noopener noreferrer" href="#">Forgot Password?</a>
                         </div>
                     </div>
@@ -51,8 +51,8 @@ const Register = () => {
                 </form>
    
             
-                <p className="text-xs text-center sm:px-6 dark:text-gray-400">Already have an account?
-                    <Link to="/signIn" rel="noopener noreferrer"  className="  text-black underline ">Login</Link>
+                <p className="text-xs text-center sm:px-6 text-black">Already have an account?
+                    <Link to="/login" rel="noopener noreferrer"  className="  text-black underline ">Login</Link>
                 </p>
             </div>
         </div>
