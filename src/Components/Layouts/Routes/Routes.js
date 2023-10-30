@@ -10,6 +10,8 @@ import Reviews from '../../Pages/Home/Reviews';
 import Services from '../../Pages/Home/Services';
 import AddService from '../../Pages/Home/AddService';
 import ErrorPage from './ErrorPage';
+import PackagesPrice from '../../Pages/Packages/PackagesPrice';
+// import Packagee from '../../Pages/PackagesPrice';
 
 
 const router = createBrowserRouter([
@@ -21,7 +23,7 @@ const router = createBrowserRouter([
         {
             path:'/',
             element:<Home></Home>,
-            loader:()=>fetch('https://citro-golpo.vercel.app/servicesforhome')
+            loader:()=>fetch('http://localhost:3001/event')
             
         },
         {
@@ -68,6 +70,19 @@ const router = createBrowserRouter([
               fetch(`https://citro-golpo.vercel.app/services/${params.id}`),
             element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>
           },
+          {
+            path:'/packages',
+            element:<PackagesPrice></PackagesPrice>,
+            // loader:()=>fetch('https://citro-golpo.vercel.app/services'),
+
+        },
+        //   {
+        //     path:'/packagee',
+        //     element:<Packagee></Packagee>,
+        //     loader:()=>fetch('https://citro-golpo.vercel.app/services'),
+
+        // },
+        
       ]
     }
   ]);
