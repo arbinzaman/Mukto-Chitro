@@ -20,7 +20,7 @@ const Services = () => {
                     )
                 }
             </div>
-            <AddService></AddService>
+            {/* <AddService></AddService> */}
         </div>
     );
 };

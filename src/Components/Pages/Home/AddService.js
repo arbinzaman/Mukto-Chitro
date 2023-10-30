@@ -60,6 +60,14 @@ const AddService = () => {
 
                             <input onChange={handleInputBlur} type="text" name="description" id="description" placeholder="Describe Details" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 bg-base-300 text-black" />
                         </div>
+                        <div>
+                            <div className="flex justify-between mb-2">
+                                <label htmlFor="text" className="text-sm">Photo</label>
+
+                            </div>
+
+                            <input onChange={handleInputBlur} type="img" name="img" id="img" placeholder="Attach Img" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 bg-base-300 text-black" />
+                        </div>
                     </div>
                     <div className="space-y-2">
                         <div>

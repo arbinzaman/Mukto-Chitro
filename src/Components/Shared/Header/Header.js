@@ -4,12 +4,12 @@ import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 
 const Header = () => {
 
-        const { user, logOut } = useContext(AuthContext);
-        const handleLogOut = () => {
-            logOut()
-                .then(() => { })
-                .catch(error => console.error('error'))
-        }
+    const { user, logOut } = useContext(AuthContext);
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.error('error'))
+    }
     return (
         <div>
             <nav>
@@ -23,17 +23,17 @@ const Header = () => {
                                 <li><Link to="/">Home</Link></li>
 
                                 {
-                            user?.uid ?
-                                <>
+                                    user?.uid ?
+                                        <>
+
+
+                                            <li><Link to="/reviews">My Reviews</Link></li>
+                                            <li><Link to="/addService">Add Service</Link></li>
+
+                                        </> : <></>
+                                }
 
                                 <li><Link to="/services">Services</Link></li>
-                                <li><Link to="/reviews">My Reviews</Link></li>
-                                <li><Link to="/addService">Add Service</Link></li>
-
-                                  </>   :<></>  
-                                  }
-
-
                                 <li><Link to="/blogs">BLog</Link></li>
                                 <li><Link to="/login">Login</Link></li>
                                 <li><Link to="/register">Register</Link></li>
@@ -46,7 +46,7 @@ const Header = () => {
                     <div className="navbar-end">
 
 
-            
+
                         {
                             user?.uid ?
                                 <>

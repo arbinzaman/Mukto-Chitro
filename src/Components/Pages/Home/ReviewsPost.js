@@ -10,7 +10,7 @@ const ReviewsPost = ({ review }) => {
         console.log(agree);
         if (agree) {
 
-            fetch(`https://citro-golpo.vercel.app/${_id}`, {
+            fetch(`https://citro-golpo.vercel.app/reviews/${_id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

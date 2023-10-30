@@ -17,7 +17,7 @@ const Reviews = () => {
         fetch('https://citro-golpo.vercel.app/reviews')
         .then(res=>res.json())
         .then(data=>setReviews(data))
-    },[])
+    },[reviews])
 
     // const reviews = useLoaderData();
     // console.log(reviews);
