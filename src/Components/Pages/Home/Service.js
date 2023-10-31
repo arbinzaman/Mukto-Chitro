@@ -21,7 +21,7 @@ const Service = ({homeService}) => {
                     <h2 className="card-title">{title}</h2>
                     <p>{description.length > 100 ? description.slice(0, 150) + "...": description}</p>
                     <div className="card-actions justify-end">
-                       <Link to={`/services/${_id}`}> <button className="btn btn-primary">Details</button></Link>
+                       <Link to="/packages"> <button className="btn btn-primary">Details</button></Link>
                     </div>
                 </div>
             </div>

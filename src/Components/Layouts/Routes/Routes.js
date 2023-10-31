@@ -61,7 +61,7 @@ const router = createBrowserRouter([
         // loader:()=>fetch('https://citro-golpo.vercel.app/reviews')
       },
       {
-        path: "/services",
+        path: "/allevent",
         element: <Services></Services>,
         loader: () => fetch("http://localhost:3001/event"),
       },
