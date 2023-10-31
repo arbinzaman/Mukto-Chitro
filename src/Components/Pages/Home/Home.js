@@ -29,7 +29,7 @@ const Home = () => {
 
             </div>
             <div className='text-center pb-10'>
-                <Link to='/services'><button className="btn  btn-xs sm:btn-sm md:btn-md lg:btn-lg">See All</button></Link>
+                <Link to='/allevent'><button className="btn  btn-xs sm:btn-sm md:btn-md lg:btn-lg">See All</button></Link>
 
             </div>
 
