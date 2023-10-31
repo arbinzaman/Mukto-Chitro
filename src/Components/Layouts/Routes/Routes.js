@@ -12,6 +12,7 @@ import AddService from "../../Pages/Home/AddService";
 import ErrorPage from "./ErrorPage";
 import PackagesPrice from "../../Pages/Packages/PackagesPrice";
 import AddAPackage from "../../Dashboard/AddAPackage";
+import AddAEvent from "../../Dashboard/AddAEvent";
 // import DashBoradLayout from "../../Dashboard/DashBoardLayouts";
 // import PrivateRoutes from "../../PrivateRoute/PrivateRoute";
 // import Packagee from '../../Pages/PackagesPrice';
@@ -83,6 +84,11 @@ const router = createBrowserRouter([
       {
         path: "/addapackage",
         element: <AddAPackage></AddAPackage>,
+        // loader:()=>fetch('https://citro-golpo.vercel.app/services'),
+      },
+      {
+        path: "/addaevent",
+        element: <AddAEvent></AddAEvent>,
         // loader:()=>fetch('https://citro-golpo.vercel.app/services'),
       },
       //   {
