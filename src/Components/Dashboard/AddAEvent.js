@@ -45,7 +45,7 @@ const AddAEvent = () => {
           };
           console.log(addaevent);
 
-          fetch("https://trade-buy-sell-arbinzaman.vercel.app/myProducts", {
+          fetch("http://localhost:3001/event", {
             method: "POST",
             headers: {
               "content-type": "application/json",
