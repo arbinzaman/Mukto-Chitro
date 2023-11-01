@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import UseTitle from "../../../Hooks/UseTitle";
+import { Link } from "react-router-dom";
 
 const PackagesPrice = () => {
   UseTitle("Packages");
@@ -29,30 +30,24 @@ const PackagesPrice = () => {
       </section>
 
       {/* {description.length > 100 ? description.slice(0, 150) + "..." : description}
-      to={`/services/${_id}`}*/}
-      {
-        packages.map((packagee) => (
-          <div className="card lg:card-side bg-base-100 shadow-xl">
-            <div className="card-body">
-            <img src={packagee.img} alt="car!"  />
-              <h2 className="card-title">{packagee.title}</h2>
-              <p>{packagee.description}</p>
-              <div className="card-actions justify-end">
+      to={`/services/${_id}`}
+      }
+      
+      */}
+      {packages.map((packagee) => (
+        <div className="card lg:card-side bg-base-100 shadow-xl">
+          <div className="card-body">
+            <img src={packagee.img} alt="car!" />
+            <h2 className="card-title">{packagee.title}</h2>
+            <p>{packagee.description}</p>
+            <div className="card-actions justify-end">
+              <Link to={`/packagedetails/${packagee.title}`} >
                 <button className="btn btn-primary">Details</button>
-              </div>
+              </Link>
             </div>
           </div>
-        ))  
-
-
-      }
-      {/* <div className="card-body">
-        <h2 className="card-title"></h2>
-        <p></p>
-        <div className="card-actions justify-end">
-          <button className="btn btn-primary">Details</button>
         </div>
-      </div> */}
+      ))}
     </div>
   );
 };

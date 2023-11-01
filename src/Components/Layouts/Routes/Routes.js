@@ -5,7 +5,6 @@ import Blogs from "../../Pages/Blogs/Blogs";
 import Login from "../../Pages/Login/Login";
 import Register from "../../Pages/Register/Register";
 import PrivateRoute from "../../PrivateRoute/PrivateRoute";
-import ServiceDetails from "../../Pages/Home/ServiceDetails";
 import Reviews from "../../Pages/Home/Reviews";
 import Services from "../../Pages/Home/Services";
 import AddService from "../../Pages/Home/AddService";
@@ -13,9 +12,11 @@ import ErrorPage from "./ErrorPage";
 import PackagesPrice from "../../Pages/Packages/PackagesPrice";
 import AddAPackage from "../../Dashboard/AddAPackage";
 import AddAEvent from "../../Dashboard/AddAEvent";
-// import DashBoradLayout from "../../Dashboard/DashBoardLayouts";
-// import PrivateRoutes from "../../PrivateRoute/PrivateRoute";
-// import Packagee from '../../Pages/PackagesPrice';
+import DashBoradLayouts from "../DashboardLayouts/DashboardLayouts";
+import PrivateRoutes from "../../PrivateRoute/PrivateRoute";
+import AllUsers from "../../Dashboard/AllUsers";
+import Allbookings from "../../Dashboard/AllBookings";
+import PackageDetails from "../../Pages/PackageDetails/PackageDetails";
 
 const router = createBrowserRouter([
   {
@@ -58,7 +59,6 @@ const router = createBrowserRouter([
             <Reviews></Reviews>
           </PrivateRoute>
         ),
-        // loader:()=>fetch('https://citro-golpo.vercel.app/reviews')
       },
       {
         path: "/allevent",
@@ -67,52 +67,49 @@ const router = createBrowserRouter([
       },
 
       {
-        path: "/services/:id",
-        loader: ({ params }) =>
-          fetch(`https://citro-golpo.vercel.app/services/${params.id}`),
-        element: (
-          <PrivateRoute>
-            <ServiceDetails></ServiceDetails>
-          </PrivateRoute>
-        ),
-      },
-      {
         path: "/packages",
         element: <PackagesPrice></PackagesPrice>,
-        // loader:()=>fetch('https://citro-golpo.vercel.app/services'),
+        
       },
       {
-        path: "/addapackage",
-        element: <AddAPackage></AddAPackage>,
-        // loader:()=>fetch('https://citro-golpo.vercel.app/services'),
+        path: "/packagedetails/:id",
+        loader: ({ params }) =>
+          fetch(`http://localhost:3001/packagedetails/location/${params.id}`),
+        element: <PackageDetails></PackageDetails>,
       },
-      {
-        path: "/addaevent",
-        element: <AddAEvent></AddAEvent>,
-        // loader:()=>fetch('https://citro-golpo.vercel.app/services'),
-      },
-      //   {
-      //     path:'/packagee',
-      //     element:<Packagee></Packagee>,
-      //     loader:()=>fetch('https://citro-golpo.vercel.app/services'),
-
-      // },
+    
     ],
   },
 
-//   {
-//     path: "/dashboard",
-//     element: (
-//       <PrivateRoutes>
-//         <DashBoradLayout></DashBoradLayout>
-//       </PrivateRoutes>
-//     ),
-//     children: [
-//       {
-//           path:'/dashboard',
-//         //   element:<SelectedItems></SelectedItems>
-//       },
-//     ],
-//   },
+  {
+    path: "/dashboard",
+    element: (
+      <PrivateRoutes>
+        <DashBoradLayouts></DashBoradLayouts>
+      </PrivateRoutes>
+    ),
+    children: [
+      {
+        path: "/dashboard",
+          element:<Allbookings></Allbookings>
+      },
+      {
+        path: "/dashboard/addapackage",
+          element:<AddAPackage></AddAPackage>,
+      },
+      {
+        path: "/dashboard/addaevent",
+          element:<AddAEvent></AddAEvent>,
+      },
+      {
+        path: "/dashboard/allusers",
+          element:<AllUsers></AllUsers>,
+      },
+      {
+        path: "/dashboard/allbookings",
+          element:<Allbookings></Allbookings>,
+      },
+    ],
+  },
 ]);
 export default router;
