@@ -16,6 +16,7 @@ import DashBoradLayouts from "../DashboardLayouts/DashboardLayouts";
 import PrivateRoutes from "../../PrivateRoute/PrivateRoute";
 import AllUsers from "../../Dashboard/AllUsers";
 import Allbookings from "../../Dashboard/AllBookings";
+import AddAEventCatagory from "../../Dashboard/AddAEventCatagory";
 import PackageDetails from "../../Pages/PackageDetails/PackageDetails";
 
 const router = createBrowserRouter([
@@ -108,6 +109,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/allbookings",
           element:<Allbookings></Allbookings>,
+      },
+      {
+        path: "/dashboard/addaeventcatagory",
+          element:<AddAEventCatagory></AddAEventCatagory>,
       },
     ],
   },

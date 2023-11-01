@@ -23,7 +23,7 @@ const AddAPackage = () => {
                     console.log(addapackage);
 
                     fetch('http://localhost:3001/packagedetails', {
-                        method: 'POST',
+                        method: '',
                         headers: {
                             "content-type": "application/json",
                         },

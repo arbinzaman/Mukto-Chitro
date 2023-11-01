@@ -33,6 +33,9 @@ const DashBoradLayouts = () => {
             <li>
               <Link to="/dashboard/allbookings">All Bookings</Link>
             </li>
+            <li>
+              <Link to="/dashboard/addaeventcatagory">Add A Event Category</Link>
+            </li>
           </ul>
         </div>
       </div>
