@@ -41,7 +41,7 @@ const PackagesPrice = () => {
             <h2 className="card-title">{packagee.title}</h2>
             <p>{packagee.description}</p>
             <div className="card-actions justify-end">
-              <Link to={`/packagedetails/${packagee.title}`} >
+              <Link to={`/packagedetails/${packagee.title.includes(" ") ? packagee?.title?.split(" ").join(""):packagee.title }`} >
                 <button className="btn btn-primary">Details</button>
               </Link>
             </div>

@@ -5,16 +5,19 @@ import { AuthContext } from "../../../Context/AuthProvider/AuthProvider";
 const PackageDetail = ({ packagedetail }) => {
   // console.log(packagedetail);
   const { description, title, event, location, price } = packagedetail;
-  const [booking, setBooking] = useState({});
+  // const [booking, setBooking] = useState({});
   const { user } = useContext(AuthContext);
-
+  // const {} = booking;
   const handleBooking = (event) => {
-    fetch("https://citro-golpo.vercel.app/services", {
+    fetch("http://localhost:3001/book", {
       method: "",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(booking),
+      body: JSON.stringify({
+        user,
+        packagedetail,
+      }),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -24,11 +27,12 @@ const PackageDetail = ({ packagedetail }) => {
           toast.success("Booking Succesfull");
         }
       })
-      .catch((err) => console.err(err));
+      .catch((err) => console.error(err));
 
-    const handleSetBooking = (event) => {
-      setBooking();
-    };
+    console.log(title);
+    // const handleSetBooking = (event) => {
+    //   setBooking();
+    // };
   };
 
   return (
@@ -65,7 +69,7 @@ const PackageDetail = ({ packagedetail }) => {
                   </li>
                 </ul>
                 <button
-                  onClick={handleBooking()}
+                  onClick={handleBooking}
                   className="px-8 py-3 mt-6 text-lg font-semibold rounded sm:mt-12 bg-slate-400 text-gray-900"
                 >
                   BOOK NOW
