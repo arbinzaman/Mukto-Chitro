@@ -4,9 +4,13 @@ import { AuthContext } from "../../../Context/AuthProvider/AuthProvider";
 
 const PackageDetail = ({ packagedetail }) => {
   // console.log(packagedetail);
-  const { description, title, event, location, price } = packagedetail;
-  // const [booking, setBooking] = useState({});
   const { user } = useContext(AuthContext);
+  console.log(user);
+  const { displayName, email } = user;
+  const { description, title, event, location, price } = packagedetail;
+  const book = { email, displayName, title, price, location, event };
+  console.log(book);
+  // const [booking, setBooking] = useState({});
   // const {} = booking;
   const handleBooking = (event) => {
     fetch("http://localhost:3001/book", {
@@ -15,8 +19,7 @@ const PackageDetail = ({ packagedetail }) => {
         "content-type": "application/json",
       },
       body: JSON.stringify({
-        user,
-        packagedetail,
+        book
       }),
     })
       .then((res) => res.json())
@@ -29,7 +32,7 @@ const PackageDetail = ({ packagedetail }) => {
       })
       .catch((err) => console.error(err));
 
-    console.log(title);
+      console.log(book);
     // const handleSetBooking = (event) => {
     //   setBooking();
     // };
