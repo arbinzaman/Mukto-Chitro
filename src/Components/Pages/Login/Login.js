@@ -60,16 +60,16 @@ const Login = () => {
 
     return (
         <div className='text-center'>
-            <div className="w-full max-w-md p-8 mx-auto space-y-3 rounded-xl bg-light text-gray-100">
+            <div className="w-full max-w-md mt-20 mb-20 p-8 mx-auto space-y-3 rounded-xl bg-zinc-300 text-gray-400">
                 <h1 className="text-2xl font-bold text-center text-black">Login</h1>
                 <form onSubmit={handleUserNamePassword} noValidate="" action="" className="space-y-6 ng-untouched ng-pristine ng-valid">
                     <div className="space-y-1 text-sm">
                         <label htmlFor="username" className="block text-black">email</label>
-                        <input type="email" name="email" id="email" placeholder="email" className="w-full px-4 py-3 rounded-md border-gray-700 bg-light text-gray-100 focus:border-violet-400" />
+                        <input type="email" name="email" id="email" placeholder="email" className="w-full px-4 py-3 rounded-md border-gray-700 bg-light text-black focus:border-violet-400" />
                     </div>
                     <div className="space-y-1 text-sm">
                         <label htmlFor="password" className="block text-black">Password</label>
-                        <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md border-gray-700 bg-light text-gray-100 focus:border-violet-400" />
+                        <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md border-gray-700 bg-light text-black focus:border-violet-400" />
                         <div className="flex justify-end text-xs text-black">
                             <a rel="noopener noreferrer" href="#">Forgot Password?</a>
                         </div>
