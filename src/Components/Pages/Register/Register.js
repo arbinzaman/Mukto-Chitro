@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 
 const Register = () => {
   UseTitle("Register");
-  // const {createUser} = useContext(AuthContext);
+  const {createUser} = useContext(AuthContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -20,13 +20,13 @@ const Register = () => {
     // console.log(userName,address,contact, email, password);
     const data = { userName, address, contact, email, password };
     console.log(data);
-    // createUser(email, password)
-    // .then(result => {
-    //     const user = result.user;
-    //     console.log(user);
-    //     form.reset()
-    // })
-    // .catch(error => console.error(error));
+    createUser(email, password)
+    .then(result => {
+        const user = result.user;
+        console.log(user);
+        form.reset()
+    })
+    .catch(error => console.error(error));
 
     fetch("http://localhost:3001/users", {
       method: "POST",
