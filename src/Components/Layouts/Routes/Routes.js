@@ -18,6 +18,7 @@ import AllUsers from "../../Dashboard/AllUsers";
 import Allbookings from "../../Dashboard/AllBookings";
 import AddAEventCatagory from "../../Dashboard/AddAEventCatagory";
 import PackageDetails from "../../Pages/PackageDetails/PackageDetails";
+import AdminRoute from "./AdminRoutes/AdminRoute";
 
 const router = createBrowserRouter([
   {
@@ -70,7 +71,6 @@ const router = createBrowserRouter([
       {
         path: "/packages",
         element: <PackagesPrice></PackagesPrice>,
-        
       },
       {
         path: "/packagedetails/:id",
@@ -78,7 +78,6 @@ const router = createBrowserRouter([
           fetch(`http://localhost:3001/packagedetails/location/${params.id}`),
         element: <PackageDetails></PackageDetails>,
       },
-    
     ],
   },
 
@@ -92,27 +91,51 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/dashboard",
-          element:<Allbookings></Allbookings>
+        element: (
+          <AdminRoute>
+            <Allbookings></Allbookings>
+          </AdminRoute>
+        ),
       },
       {
         path: "/dashboard/addapackage",
-          element:<AddAPackage></AddAPackage>,
+        element: (
+          <AdminRoute>
+            <AddAPackage></AddAPackage>
+          </AdminRoute>
+        ),
       },
       {
         path: "/dashboard/addaevent",
-          element:<AddAEvent></AddAEvent>,
+        element: (
+          <AdminRoute>
+            <AddAEvent></AddAEvent>
+          </AdminRoute>
+        ),
       },
       {
         path: "/dashboard/allusers",
-          element:<AllUsers></AllUsers>,
+        element: (
+          <AdminRoute>
+            <AllUsers></AllUsers>
+          </AdminRoute>
+        ),
       },
       {
         path: "/dashboard/allbookings",
-          element:<Allbookings></Allbookings>,
+        element: (
+          <AdminRoute>
+            <Allbookings></Allbookings>
+          </AdminRoute>
+        ),
       },
       {
         path: "/dashboard/addaeventcatagory",
-          element:<AddAEventCatagory></AddAEventCatagory>,
+        element: (
+          <AdminRoute>
+            <AddAEventCatagory></AddAEventCatagory>
+          </AdminRoute>
+        ),
       },
     ],
   },

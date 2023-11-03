@@ -1,8 +1,12 @@
 import React, { useContext } from "react";
 import { Link, Outlet } from "react-router-dom";
 import Header from "../../Shared/Header/Header";
+import { AuthContext } from "../../../Context/AuthProvider/AuthProvider";
+import useAdmin from "../../../Hooks/UseAdmin";
 
-const DashBoradLayouts = () => {
+const DashBoardLayouts = () => {
+  const { user } = useContext(AuthContext);
+  const [isAdmin] = useAdmin(user?.email);
   return (
     <div>
       <Header></Header>
@@ -18,24 +22,31 @@ const DashBoradLayouts = () => {
               <Link to="/dashboard">DashBoard</Link>
             </li>
 
-            {/* <li>
+            <li>
               <Link to="/dashboard/mybookings">My Bookings</Link>
-            </li> */}
-            <li>
-              <Link to="/dashboard/addapackage">Add A Package</Link>
             </li>
-            <li>
-              <Link to="/dashboard/addaevent">Add A Event</Link>
-            </li>
-            <li>
-              <Link to="/dashboard/allusers">All Users</Link>
-            </li>
-            <li>
-              <Link to="/dashboard/allbookings">All Bookings</Link>
-            </li>
-            <li>
-              <Link to="/dashboard/addaeventcatagory">Add A Event Category</Link>
-            </li>
+
+            {isAdmin && (
+              <>
+                <li>
+                  <Link to="/dashboard/addapackage">Add A Package</Link>
+                </li>
+                <li>
+                  <Link to="/dashboard/addaevent">Add A Event</Link>
+                </li>
+                <li>
+                  <Link to="/dashboard/allusers">All Users</Link>
+                </li>
+                <li>
+                  <Link to="/dashboard/allbookings">All Bookings</Link>
+                </li>
+                <li>
+                  <Link to="/dashboard/addaeventcatagory">
+                    Add A Event Category
+                  </Link>
+                </li>
+              </>
+            )}
           </ul>
         </div>
       </div>
@@ -43,4 +54,4 @@ const DashBoradLayouts = () => {
   );
 };
 
-export default DashBoradLayouts;
+export default DashBoardLayouts;
