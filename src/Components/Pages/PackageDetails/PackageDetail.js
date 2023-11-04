@@ -3,39 +3,38 @@ import { toast } from "react-toastify";
 import { AuthContext } from "../../../Context/AuthProvider/AuthProvider";
 
 const PackageDetail = ({ packagedetail }) => {
-  // console.log(packagedetail);
   const { user } = useContext(AuthContext);
-  console.log(user);
-  const { displayName, email } = user;
   const { description, title, event, location, price } = packagedetail;
-  const book = { email, displayName, title, price, location, event };
-  console.log(book);
-  // const [booking, setBooking] = useState({});
-  // const {} = booking;
+
+  const addapackage = {
+    customerName: user?.displayName,
+    customerEmail: user?.email,
+    title: title,
+    location: location,
+    price: price,
+    description: description,
+    event: event,
+  };
+  console.log(addapackage);
+
   const handleBooking = (event) => {
     fetch("http://localhost:3001/book", {
-      method: "",
+      method: "POST",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify({
-        book
-      }),
+      body: JSON.stringify(addapackage),
     })
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data);
-        if (data.acknowledged) {
-          // event.target.from.reset()
+        console.log(data);
+        if (data.insertId) {
           toast.success("Booking Succesfull");
         }
       })
       .catch((err) => console.error(err));
 
-      console.log(book);
-    // const handleSetBooking = (event) => {
-    //   setBooking();
-    // };
+    console.log(addapackage);
   };
 
   return (
@@ -46,10 +45,7 @@ const PackageDetail = ({ packagedetail }) => {
             <div className="flex flex-col overflow-hidden border-2 rounded-md border-gray-700">
               <div className="flex flex-col items-center justify-center px-2 py-8 space-y-4 ">
                 <p className="text-lg font-medium">{title}</p>
-                <p className="text-5xl font-bold">
-                  {price}
-                  {/* <span className="text-xl text-gray-400"></span> */}
-                </p>
+                <p className="text-5xl font-bold">{price}</p>
               </div>
               <div className="flex flex-col items-center justify-center px-2 py-8 bg-gray-300">
                 <ul className="self-stretch flex-1 space-y-2">
