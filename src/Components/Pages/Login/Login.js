@@ -11,7 +11,7 @@ const Login = () => {
     const [error, setError] = useState();
     const { signIn } = useContext(AuthContext);
 
-    // Redirect to current path
+   // Redirect to current path
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -33,7 +33,7 @@ const Login = () => {
                 form.reset();
                 setError('')
                 navigate(from, { replace: true });
-            })
+            }) 
 
             .catch(error => { console.error(error) });
         setError(error.message);
@@ -41,7 +41,7 @@ const Login = () => {
     }
     // gitHUb Login
 
-    const githubProvider = new GithubAuthProvider();
+    // const githubProvider = new GithubAuthProvider();
 
 
     // google login
