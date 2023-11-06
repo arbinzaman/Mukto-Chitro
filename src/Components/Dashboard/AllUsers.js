@@ -41,9 +41,10 @@ const AllUser = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data.deletedCount > 0) {
+        if (data.message === "Row deleted successfully") {
           console.log(data.deletedCount);
           toast.success("User Deleted Succesfully");
+          window.location.reload();
           const remainingUsers = displayUser.filter((usr) => usr.userID !== userID);
           setDisplayUser(remainingUsers);
         }

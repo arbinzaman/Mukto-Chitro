@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import useAdmin from "../../../Hooks/UseAdmin";
 
 const Service = ({ homeService }) => {
   const [displayEvent, setDisplayEvent] = useState();
-  // console.log(service.description);
-  // console.log(service);
-  const { eventID, title, description, img,} = homeService;
-  // console.log(title);
+  const isAdmin = useAdmin();
+  const { eventID, title, description, img } = homeService;
 
   // handleDeleteUser
   const handleDeleteUser = (eventID) => {
@@ -18,9 +17,9 @@ const Service = ({ homeService }) => {
       .then((data) => {
         console.log(data);
         if (data.message === "Row deleted successfully") {
-          window.location.reload();
           console.log(data.deletedCount);
           toast.success("Event Deleted Succesfully");
+          window.location.reload();
           const remainingUsers = displayEvent.filter(
             (usr) => usr.eventID !== eventID
           );
@@ -44,18 +43,18 @@ const Service = ({ homeService }) => {
               : description}
           </p>
           <div className="card-actions justify-end">
-            <button
-              onClick={() => handleDeleteUser(eventID)}
-              className="btn btn-danger"
-            >
-              Delete
-            </button>
-          </div>
-          <div className="card-actions justify-end">
             <Link to="/packages">
               {" "}
               <button className="btn btn-primary">Details</button>
             </Link>
+            {isAdmin && (
+              <button
+                onClick={() => handleDeleteUser(eventID)}
+                className="btn ml-2 btn-danger"
+              >
+                Delete
+              </button>
+            )}
           </div>
         </div>
       </div>

@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import UseTitle from "../../../Hooks/UseTitle";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import UseAdmin from "../../../Hooks/UseAdmin";
 
 const PackagesPrice = () => {
-  // const router = window.location.reload();
   UseTitle("Packages");
-  //   console.log(packagee);
+  const isAdmin = UseAdmin();
   const [displayUser, setDisplayUser] = useState();
   const [packages, setPackages] = useState([]);
   console.log(packages);
@@ -17,16 +17,17 @@ const PackagesPrice = () => {
   }, []);
 
   // handleDeleteUser
-  const handleDeleteUser = async(packageID) => {
+  const handleDeleteUser = async (packageID) => {
     await fetch(`http://localhost:3001/packages/${packageID}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data.deletedCount > 0) {
+        if (data.message === "Row deleted successfully") {
           console.log(data.deletedCount);
           toast.success("Package Deleted Succesfully");
+          window.location.reload();
           const remainingPackages = displayUser.filter(
             (packages) => packages.packageID !== packageID
           );
@@ -75,12 +76,16 @@ const PackagesPrice = () => {
                 <button className="btn btn-primary">Details</button>
               </Link>
 
-              <button
-                onClick={() => handleDeleteUser(packagee.packageID)}
-                className="btn btn-danger"
-              >
-                Delete
-              </button>
+              {isAdmin && (
+                <button
+                  onClick={() => handleDeleteUser(packagee.packageID)}
+                  className="btn  btn-danger"
+                >
+                  Delete
+                </button>
+              )}
+
+  
             </div>
           </div>
         </div>
