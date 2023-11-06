@@ -1,8 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
+import { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-
+import Spinner from "../../Components/Shared/Spiner/Spiner";
 const AddAPackage = () => {
+  const [loading, setLoading] = useState(false);
   const { data: packages = [] } = useQuery({
     queryKey: ["specialty"],
     queryFn: async () => {
@@ -14,6 +16,7 @@ const AddAPackage = () => {
   console.log(packages);
   const handleSubmit = (event) => {
     event.preventDefault();
+    setLoading(true);
     const form = event.target;
     const title = form.title.value;
     const price = form.price.value;
@@ -40,6 +43,7 @@ const AddAPackage = () => {
       .then((res) => res.json())
       .then((result) => {
         console.log(result);
+        setLoading(false);
         if (result.insertId) {
         toast.success(`Package Detail is added successfully`);
         form.reset();
@@ -47,7 +51,7 @@ const AddAPackage = () => {
       }
       });
   };
-
+  if (loading) return<Spinner></Spinner>;
   return (
     <div className="text-center">
       <div className="flex flex-col max-w-md p-6 mt-10 rounded-md sm:p-10 dark:bg-base-300 dark:text-black">
