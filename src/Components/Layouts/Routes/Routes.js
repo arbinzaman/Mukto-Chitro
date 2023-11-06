@@ -19,6 +19,7 @@ import Allbookings from "../../Dashboard/AllBookings";
 import AddAEventCatagory from "../../Dashboard/AddAEventCatagory";
 import PackageDetails from "../../Pages/PackageDetails/PackageDetails";
 import AdminRoute from "./AdminRoutes/AdminRoute";
+import MyPackages from "../../Dashboard/MyPackage/MyPackages";
 
 const router = createBrowserRouter([
   {
@@ -134,6 +135,14 @@ const router = createBrowserRouter([
         element: (
           <AdminRoute>
             <AddAEventCatagory></AddAEventCatagory>
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "/dashboard/mybookings",
+        element: (
+          <AdminRoute>
+           <MyPackages></MyPackages>
           </AdminRoute>
         ),
       },

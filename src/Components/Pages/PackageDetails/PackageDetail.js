@@ -7,7 +7,7 @@ const PackageDetail = ({ packagedetail }) => {
   const { description, title, event, location, price } = packagedetail;
 
   const addapackage = {
-    customerName: user?.displayName,
+    // customerName: user?.displayName,
     customerEmail: user?.email,
     title: title,
     location: location,

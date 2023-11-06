@@ -3,9 +3,7 @@ import { Navigate, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const AddAPackage = () => {
-
- 
-  const { data: packages=[], } = useQuery({
+  const { data: packages = [] } = useQuery({
     queryKey: ["specialty"],
     queryFn: async () => {
       const res = await fetch("http://localhost:3001/packages");
@@ -13,7 +11,7 @@ const AddAPackage = () => {
       return data;
     },
   });
-console.log(packages);
+  console.log(packages);
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -46,7 +44,6 @@ console.log(packages);
         // Navigate('/dashboard/addaproduct')
       });
   };
-
 
   return (
     <div className="text-center">
@@ -92,13 +89,11 @@ console.log(packages);
                 <option disabled selected>
                   Loaction
                 </option>
-                {
-                            packages.map(packagee =>
-                                <option
-                                    key={packagee.id}
-                                    value={packagee.title}
-                                >{packagee.title}</option>)
-                        }
+                {packages.map((packagee) => (
+                  <option key={packagee.id} value={packagee.title}>
+                    {packagee.title}
+                  </option>
+                ))}
               </select>
             </div>
 
