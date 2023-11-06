@@ -48,7 +48,6 @@ const AddAEventCatagory = () => {
               if (result.message === "Data Posted successfully") {
                 setLoading(false);
                 toast.success(`Event is added successfully`);
-                // Navigate("/dashboard/addaevent");
                 form.reset();
               }
             });

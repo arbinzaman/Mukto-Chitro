@@ -28,7 +28,7 @@ const PackageDetail = ({ packagedetail }) => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data.insertId) {
+        if (data.message === "Data Posted successfully") {
           toast.success("Booking Succesfull");
         }
       })

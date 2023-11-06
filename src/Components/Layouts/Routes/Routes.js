@@ -1,11 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Main/Main";
 import Home from "../../Pages/Home/Home";
-import Blogs from "../../Pages/Blogs/Blogs";
 import Login from "../../Pages/Login/Login";
 import Register from "../../Pages/Register/Register";
 import PrivateRoute from "../../PrivateRoute/PrivateRoute";
-import Reviews from "../../Pages/Home/Reviews";
 import Services from "../../Pages/Home/Services";
 import AddService from "../../Pages/Home/AddService";
 import ErrorPage from "./ErrorPage";
@@ -32,10 +30,6 @@ const router = createBrowserRouter([
         loader: () => fetch("http://localhost:3001/event"),
       },
       {
-        path: "/blogs",
-        element: <Blogs></Blogs>,
-      },
-      {
         path: "/login",
         element: <Login></Login>,
       },
@@ -55,14 +49,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-      {
-        path: "/reviews",
-        element: (
-          <PrivateRoute>
-            <Reviews></Reviews>
-          </PrivateRoute>
-        ),
-      },
+    
       {
         path: "/allevent",
         element: <Services></Services>,
@@ -93,9 +80,7 @@ const router = createBrowserRouter([
       {
         path: "/dashboard",
         element: (
-          <AdminRoute>
-            <Allbookings></Allbookings>
-          </AdminRoute>
+           <MyPackages></MyPackages>
         ),
       },
       {
@@ -139,10 +124,10 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/dashboard/mybookings",
+        path: "/dashboard/allbookings",
         element: (
           <AdminRoute>
-           <MyPackages></MyPackages>
+         <Allbookings></Allbookings>
           </AdminRoute>
         ),
       },

@@ -26,7 +26,7 @@ const AllUser = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data.modifiedCount > 0) {
+        if (data.message === "User role updated to admin") {
           toast.success("Make Admin Successfully");
           refetch();
         }

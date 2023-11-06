@@ -14,7 +14,7 @@ const HighLightSection = () => {
                     </div>
                 </div>
             </div>
-            <img src="https://images.unsplash.com/photo-1579260729526-ca1e77ad9092?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="" className="w-5/6 mx-auto mb-12 -mt-20 rounded-lg shadow-md lg:-mt-40 dark:bg-gray-500" />
+            <img src="https://images.unsplash.com/photo-1677691257363-eebd2abeafec?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" className="w-3/5 mx-auto mb-12 -mt-20 rounded-lg shadow-md lg:-mt-40 dark:bg-gray-500" />
         </section>
     );
 };

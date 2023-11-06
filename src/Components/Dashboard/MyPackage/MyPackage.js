@@ -13,9 +13,10 @@ const [displayBookings, setDisplayBookings] = useState();
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data.deletedCount > 0) {
+        if (data.message === "Row deleted successfully") {
           console.log(data.deletedCount);
           toast.success("Booking Deleted Succesfully");
+          window.location.reload();
           const remainingBooking = displayBookings.filter((usr) => usr.bookingID !== bookingID);
           setDisplayBookings(remainingBooking);
         }

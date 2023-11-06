@@ -23,7 +23,7 @@ const DashBoardLayouts = () => {
             </li>
 
             <li>
-              <Link to="/dashboard/mybookings">My Bookings</Link>
+              <Link to="/dashboard">My Bookings</Link>
             </li>
 
             {isAdmin && (
