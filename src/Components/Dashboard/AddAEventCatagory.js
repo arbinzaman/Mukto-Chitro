@@ -1,8 +1,10 @@
 import React, { useContext, useState } from "react";
 import { Navigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import Spinner from "../../Components/Shared/Spiner/Spiner";
 const AddAEventCatagory = () => {
   const [img, setImg] = useState(null);
+  const [loading, setLoading] = useState(false);
   const imageInput = (e) => {
     const file = e.target.files[0];
     setImg(file);
@@ -10,6 +12,7 @@ const AddAEventCatagory = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    setLoading(true);
     const form = event.target;
     const title = form.title.value;
     const description = form.description.value;
@@ -29,7 +32,6 @@ const AddAEventCatagory = () => {
             title: title,
             description: description,
             img: picture,
-
           };
           console.log(addaeventcategory);
 
@@ -43,13 +45,18 @@ const AddAEventCatagory = () => {
             .then((res) => res.json())
             .then((result) => {
               console.log(result);
-              toast.success(`Event is added successfully`);
-            //   Navigate("/dashboard/addaevent");
+              if (result.message === "Data Posted successfully") {
+                setLoading(false);
+                toast.success(`Event is added successfully`);
+                // Navigate("/dashboard/addaevent");
+                form.reset();
+              }
             });
         }
       });
   };
 
+  if (loading) return<Spinner></Spinner>;
   return (
     <div className="text-center">
       <div className="flex flex-col max-w-md p-6 mt-10 rounded-md sm:p-10 dark:bg-base-300 dark:text-black">

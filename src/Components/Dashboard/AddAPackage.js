@@ -42,6 +42,7 @@ const AddAPackage = () => {
         console.log(result);
         if (result.insertId) {
         toast.success(`Package Detail is added successfully`);
+        form.reset();
         // Navigate('/dashboard/addaproduct')
       }
       });
