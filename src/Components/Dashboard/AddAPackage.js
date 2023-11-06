@@ -31,7 +31,7 @@ const AddAPackage = () => {
     console.log(addapackage);
 
     fetch("http://localhost:3001/packagedetails", {
-      method: "",
+      method: "POST",
       headers: {
         "content-type": "application/json",
       },
@@ -40,8 +40,10 @@ const AddAPackage = () => {
       .then((res) => res.json())
       .then((result) => {
         console.log(result);
+        if (result.insertId) {
         toast.success(`Package Detail is added successfully`);
         // Navigate('/dashboard/addaproduct')
+      }
       });
   };
 

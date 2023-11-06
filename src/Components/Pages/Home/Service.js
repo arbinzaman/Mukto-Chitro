@@ -17,7 +17,8 @@ const Service = ({ homeService }) => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data.deletedCount > 0) {
+        if (data.message === "Row deleted successfully") {
+          window.location.reload();
           console.log(data.deletedCount);
           toast.success("Event Deleted Succesfully");
           const remainingUsers = displayEvent.filter(
