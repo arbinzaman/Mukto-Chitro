@@ -16,22 +16,22 @@ const AllUser = () => {
   });
 
   // // handleMakeAdmin
-  // const handleMakeAdmin = (userID) => {
-  //   fetch(
-  //     `http://localhost:3001/users/admin/${userID}`,
-  //     {
-  //       method: "PUT",
-  //     }
-  //   )
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       console.log(data);
-  //       if (data.modifiedCount > 0) {
-  //         toast.success("Make Admin Successfully");
-  //         refetch();
-  //       }
-  //     });
-  // };
+  const handleMakeAdmin = (userID) => {
+    fetch(
+      `http://localhost:3001/users/${userID}`,
+      {
+        method: "PUT",
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount > 0) {
+          toast.success("Make Admin Successfully");
+          refetch();
+        }
+      });
+  };
 
   // handleDeleteUser
   const handleDeleteUser = (userID) => {
@@ -70,7 +70,7 @@ const AllUser = () => {
                 <th>{i + 1}</th>
                 <td>{user.name}</td>
                 <td>{user.email}</td>
-                {/* <td>
+                <td>
                   {user?.role !== "admin" && (
                     <button
                       onClick={() => handleMakeAdmin(user.userID)}
@@ -79,7 +79,7 @@ const AllUser = () => {
                       Make Admin
                     </button>
                   )}
-                </td> */}
+                </td>
                 <td>
                   {user?.role !== "admin" && (
                     <button

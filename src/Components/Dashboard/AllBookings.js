@@ -23,8 +23,7 @@ const Allbookings = () => {
           <thead>
             <tr>
               <th></th>
-              <th>Customer Name</th>
-              <th>Phone</th>
+            
               <th>Title</th>
               <th>Price</th>
               <th>Location</th>
@@ -35,8 +34,6 @@ const Allbookings = () => {
             {booking.map((book, i) => (
               <tr key={book.id}>
                 <th>{i + 1}</th>
-                <td>{book.customerName}</td>
-                <td>{book.phone}</td>
                 <td>{book.title}</td>
                 <td>{book.price}</td>
                 <td>{book.location}</td>
