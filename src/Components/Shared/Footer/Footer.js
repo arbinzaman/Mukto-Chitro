@@ -5,8 +5,8 @@ const Footer = () => {
         <div className='bg-base-300'>
             <footer className="footer p-10 bg-light text-neutral-content">
                 <div  className='text-black'>
-                    <img src="http://bdphotographers.com/upload/profile-cover-photo/thumb/1500730408bd_photographers.jpg" className='h-10' alt="" />
-                    <p>Chitro Golpo.<br />Providing reliable Photography Brand since 2019</p>
+                    <img src="https://i.ibb.co/3rLmrRK/chitrogolpo.jpg" className='h-20' alt="" />
+                    <p>Mukto-Chitro<br />Providing reliable Photography Brand since 2019</p>
                 </div>
                 <div>
                     <span className="footer-title text-black">Social</span>

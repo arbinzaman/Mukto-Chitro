@@ -38,24 +38,6 @@ const Header = () => {
                 <li>
                   <Link to="/">Home</Link>
                 </li>
-
-                {/* {
-                                    user?.uid ?
-                                        <>
-
-
-                                            <li><Link to="/reviews">My Reviews</Link></li>
-                                            <li><Link to="/addService">Add Service</Link></li>
-
-                                        </> : <></>
-                                } */}
-
-                {/* <li>
-                  <Link to="/services">Services</Link>
-                </li>
-                <li>
-                  <Link to="/blogs">BLog</Link>
-                </li> */}
                 <li>
                   <Link to="/login">Login</Link>
                 </li>
@@ -66,14 +48,15 @@ const Header = () => {
                   <Link to="/packages">Packages</Link>
                 </li>
                 <li>
-                  <Link to="/dashboard">DashBorad</Link>
+                  <Link to="/dashboard">DashBoard</Link>
                 </li>
               </ul>
             </div>
           </div>
           <div className="navbar-center">
-            <Link to="/" className="btn btn-ghost normal-case text-xl">
-              Mukto-Chitro
+
+            <Link to="/">
+            <img src="https://i.ibb.co/3rLmrRK/chitrogolpo.jpg" className="h-20" alt="" />
             </Link>
           </div>
           <div className="navbar-end">

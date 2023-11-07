@@ -26,6 +26,7 @@ const AddAEventCatagory = () => {
     })
       .then((res) => res.json())
       .then((imgData) => {
+        toast.error(imgData.message);
         if (imgData.success) {
           const picture = imgData.data.url;
           const addaeventcategory = {
@@ -58,7 +59,7 @@ const AddAEventCatagory = () => {
   if (loading) return<Spinner></Spinner>;
   return (
     <div className="text-center">
-      <div className="flex flex-col max-w-md p-6 mt-10 rounded-md sm:p-10 dark:bg-base-300 dark:text-black">
+      <div className="flex flex-col max-w-md p-6  rounded-md sm:p-10 dark:bg-base-300 dark:text-black">
         <form
           onSubmit={handleSubmit}
           noValidate=""

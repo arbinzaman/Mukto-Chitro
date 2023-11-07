@@ -58,7 +58,7 @@ const PackagesPrice = () => {
       
       */}
       {packages.map((packagee) => (
-        <div className="card lg:card-side bg-base-100 shadow-xl">
+        <div className="card lg:card-side mb-20 bg-base-100 shadow-xl">
           <div className="card-body">
             <img src={packagee.img} alt="car!" />
             <h2 className="card-title">{packagee.title}</h2>
