@@ -5,7 +5,6 @@ const Packagee = () => {
   const [packages, setPackages] = useState([]);
   console.log(packages);
   useEffect(() => {
-
     fetch("http://localhost:3001/packages")
       .then((res) => res.json())
       .then((data) => setPackages(data));

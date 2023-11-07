@@ -6,7 +6,7 @@ import UseAdmin from "../../../Hooks/UseAdmin";
 
 const PackagesPrice = () => {
   UseTitle("Packages");
-  const isAdmin = UseAdmin();
+  const [isAdmin] = UseAdmin();
   const [displayUser, setDisplayUser] = useState();
   const [packages, setPackages] = useState([]);
   console.log(packages);
@@ -52,11 +52,6 @@ const PackagesPrice = () => {
         </div>
       </section>
 
-      {/* {description.length > 100 ? description.slice(0, 150) + "..." : description}
-      to={`/services/${_id}`}
-      }
-      
-      */}
       {packages.map((packagee) => (
         <div className="card lg:card-side mb-20 bg-base-100 shadow-xl">
           <div className="card-body">

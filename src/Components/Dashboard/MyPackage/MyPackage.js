@@ -1,12 +1,11 @@
-import React, { useContext, useState } from "react";import { toast } from "react-toastify";
-;
-
+import React, { useContext, useState } from "react";
+import { toast } from "react-toastify";
 const Mypackage = ({ myBooking }) => {
-const [displayBookings, setDisplayBookings] = useState();
-  const { title, event, location, price,customerEmail,bookingID } = myBooking;
+  const [displayBookings, setDisplayBookings] = useState();
+  const { title, event, location, price, customerEmail, bookingID } = myBooking;
 
- // handleDeleteUser
- const handleDeleteUser = (bookingID) => {
+  // handleDeleteUser
+  const handleDeleteUser = (bookingID) => {
     fetch(`http://localhost:3001/book/${bookingID}`, {
       method: "DELETE",
     })
@@ -15,18 +14,15 @@ const [displayBookings, setDisplayBookings] = useState();
         console.log(data);
         if (data.message === "Row deleted successfully") {
           console.log(data.deletedCount);
-          toast.success("Booking Deleted Succesfully");
+          toast.success("Booking Cancelled Succesfully");
           window.location.reload();
-          const remainingBooking = displayBookings.filter((usr) => usr.bookingID !== bookingID);
+          const remainingBooking = displayBookings.filter(
+            (usr) => usr.bookingID !== bookingID
+          );
           setDisplayBookings(remainingBooking);
         }
       });
   };
-
-
-
-
-
 
   return (
     <div>
@@ -97,11 +93,11 @@ const [displayBookings, setDisplayBookings] = useState();
                   </li>
                 </ul>
                 <button
-              onClick={() => handleDeleteUser(bookingID)}
-              className="btn btn-danger"
-            >
-              Delete
-            </button>
+                  onClick={() => handleDeleteUser(bookingID)}
+                  className="btn btn-danger mt-5"
+                >
+                  Cancel Booking
+                </button>
               </div>
             </div>
           </div>

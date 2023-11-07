@@ -5,7 +5,7 @@ const Gallery = () => {
     <section className="my-6 bg-gray-300 text-gray-50">
       <div className="container grid grid-cols-2 gap-4 p-4 mx-auto md:grid-cols-4">
         <img
-          src="https://chitrogolpo.com/wp-content/uploads/2023/04/3-3-683x1024.jpg"
+          src="https://source.unsplash.com/random/200x200/?1"
           alt=""
           className="w-full h-70 col-span-2 row-span-2 rounded shadow-sm min-h-96  mx-auto md:col-start-3 md:row-start-1 bg-gray-500 aspect-square"
         />

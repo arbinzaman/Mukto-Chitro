@@ -49,7 +49,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-    
+
       {
         path: "/allevent",
         element: <Services></Services>,
@@ -64,7 +64,11 @@ const router = createBrowserRouter([
         path: "/packagedetails/:id",
         loader: ({ params }) =>
           fetch(`http://localhost:3001/packagedetails/location/${params.id}`),
-        element: <PackageDetails></PackageDetails>,
+        element: (
+          <PrivateRoute>
+            <PackageDetails></PackageDetails>
+          </PrivateRoute>
+        ),
       },
     ],
   },
@@ -79,9 +83,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/dashboard",
-        element: (
-           <MyPackages></MyPackages>
-        ),
+        element: <MyPackages></MyPackages>,
       },
       {
         path: "/dashboard/addapackage",
@@ -127,7 +129,7 @@ const router = createBrowserRouter([
         path: "/dashboard/allbookings",
         element: (
           <AdminRoute>
-         <Allbookings></Allbookings>
+            <Allbookings></Allbookings>
           </AdminRoute>
         ),
       },

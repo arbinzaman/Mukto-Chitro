@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import useAdmin from "../../../Hooks/UseAdmin";
+import UseAdmin from "../../../Hooks/UseAdmin";
 
 const Service = ({ homeService }) => {
   const [displayEvent, setDisplayEvent] = useState();
-  const isAdmin = useAdmin();
+  const [isAdmin] = UseAdmin();
+  console.log(isAdmin);
   const { eventID, title, description, img } = homeService;
 
   // handleDeleteUser

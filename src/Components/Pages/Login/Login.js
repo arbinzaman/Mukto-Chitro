@@ -4,6 +4,7 @@ import { GoogleAuthProvider } from "firebase/auth";
 import { GithubAuthProvider } from "firebase/auth";
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 import UseTitle from '../../../Hooks/UseTitle';
+import { toast } from 'react-toastify';
 
 const Login = () => {
         UseTitle("Login")
@@ -31,6 +32,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 form.reset();
+                toast.success("Login Succesfully");
                 setError('')
                 navigate(from, { replace: true });
             }) 

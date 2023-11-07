@@ -64,7 +64,7 @@ const AddAEvent = () => {
 
   return (
     <div className="text-center">
-      <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 dark:bg-base-300 dark:text-black">
+      <div className="flex flex-col max-w-md p-6 mt-20 rounded-md sm:p-10 dark:bg-base-300 dark:text-black">
         <form
           onSubmit={handleSubmit}
           noValidate=""
