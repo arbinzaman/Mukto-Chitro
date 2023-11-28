@@ -18,7 +18,7 @@ const PackageDetail = ({ packagedetail }) => {
   console.log(addapackage);
 
   const handleBooking = (event) => {
-    fetch("http://localhost:3001/book", {
+    fetch("https://mukto-chitro-server-site.vercel.app/book", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -11,7 +11,7 @@ const Service = ({ homeService }) => {
 
   // handleDeleteUser
   const handleDeleteUser = (eventID) => {
-    fetch(`http://localhost:3001/event/${eventID}`, {
+    fetch(`https://mukto-chitro-server-site.vercel.app/event/${eventID}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

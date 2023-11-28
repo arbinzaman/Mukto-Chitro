@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 
 const AllUser = () => {
   const [displayUser, setDisplayUser] = useState();
-  const url = `http://localhost:3001/users`;
+  const url = `https://mukto-chitro-server-site.vercel.app/users`;
 
   const { data: users = [], refetch } = useQuery({
     queryKey: ["users"],
@@ -18,7 +18,7 @@ const AllUser = () => {
   // // handleMakeAdmin
   const handleMakeAdmin = (userID) => {
     fetch(
-      `http://localhost:3001/users/${userID}`,
+      `https://mukto-chitro-server-site.vercel.app/users/${userID}`,
       {
         method: "PUT",
       }
@@ -35,7 +35,7 @@ const AllUser = () => {
 
   // handleDeleteUser
   const handleDeleteUser = (userID) => {
-    fetch(`http://localhost:3001/users/${userID}`, {
+    fetch(`https://mukto-chitro-server-site.vercel.app/users/${userID}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

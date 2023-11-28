@@ -11,14 +11,14 @@ const PackagesPrice = () => {
   const [packages, setPackages] = useState([]);
   console.log(packages);
   useEffect(() => {
-    fetch("http://localhost:3001/packages")
+    fetch("https://mukto-chitro-server-site.vercel.app/packages")
       .then((res) => res.json())
       .then((data) => setPackages(data));
   }, []);
 
   // handleDeleteUser
   const handleDeleteUser = async (packageID) => {
-    await fetch(`http://localhost:3001/packages/${packageID}`, {
+    await fetch(`https://mukto-chitro-server-site.vercel.app/packages/${packageID}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

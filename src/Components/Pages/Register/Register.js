@@ -28,7 +28,7 @@ const Register = () => {
     })
     .catch(error => console.error(error));
 
-    fetch("http://localhost:3001/users", {
+    fetch("https://mukto-chitro-server-site.vercel.app/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

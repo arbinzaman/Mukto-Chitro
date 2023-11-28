@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 
 const MyBookings = () => {
   //   const [displayUser, setDisplayUser] = useState();
-  const url = `http://localhost:3001/book`;
+  const url = `https://mukto-chitro-server-site.vercel.app/book`;
 
   const { data: booking = [], refetch } = useQuery({
     queryKey: ["booking"],

@@ -8,7 +8,7 @@ const AddAPackage = () => {
   const { data: packages = [] } = useQuery({
     queryKey: ["specialty"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:3001/packages");
+      const res = await fetch("https://mukto-chitro-server-site.vercel.app/packages");
       const data = await res.json();
       return data;
     },
@@ -33,7 +33,7 @@ const AddAPackage = () => {
     };
     console.log(addapackage);
 
-    fetch("http://localhost:3001/packagedetails", {
+    fetch("https://mukto-chitro-server-site.vercel.app/packagedetails", {
       method: "POST",
       headers: {
         "content-type": "application/json",

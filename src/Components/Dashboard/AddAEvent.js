@@ -45,7 +45,7 @@ const AddAEvent = () => {
           };
           console.log(addaevent);
 
-          fetch("http://localhost:3001/event", {
+          fetch("https://mukto-chitro-server-site.vercel.app/event", {
             method: "POST",
             headers: {
               "content-type": "application/json",

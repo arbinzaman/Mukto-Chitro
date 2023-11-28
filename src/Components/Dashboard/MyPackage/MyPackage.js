@@ -6,7 +6,7 @@ const Mypackage = ({ myBooking }) => {
 
   // handleDeleteUser
   const handleDeleteUser = (bookingID) => {
-    fetch(`http://localhost:3001/book/${bookingID}`, {
+    fetch(`https://mukto-chitro-server-site.vercel.app/book/${bookingID}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

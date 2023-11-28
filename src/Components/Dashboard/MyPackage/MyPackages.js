@@ -5,7 +5,7 @@ import { AuthContext } from "../../../Context/AuthProvider/AuthProvider";
 
 const MyPackages = () => {
   const { user } = useContext(AuthContext);
-  const url = `http://localhost:3001/book/${user?.email}`;
+  const url = `https://mukto-chitro-server-site.vercel.app/book/${user?.email}`;
 
   const { data: myBookings = [] } = useQuery({
     queryKey: ["myBookings"],

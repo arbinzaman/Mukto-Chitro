@@ -36,7 +36,7 @@ const AddAEventCatagory = () => {
           };
           console.log(addaeventcategory);
 
-          fetch("http://localhost:3001/packages", {
+          fetch("https://mukto-chitro-server-site.vercel.app/packages", {
             method: "POST",
             headers: {
               "content-type": "application/json",

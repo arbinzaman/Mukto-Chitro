@@ -27,7 +27,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:3001/event"),
+        loader: () => fetch("https://mukto-chitro-server-site.vercel.app/event"),
       },
       {
         path: "/login",
@@ -53,7 +53,7 @@ const router = createBrowserRouter([
       {
         path: "/allevent",
         element: <Services></Services>,
-        loader: () => fetch("http://localhost:3001/event"),
+        loader: () => fetch("https://mukto-chitro-server-site.vercel.app/event"),
       },
 
       {
@@ -63,7 +63,7 @@ const router = createBrowserRouter([
       {
         path: "/packagedetails/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:3001/packagedetails/location/${params.id}`),
+          fetch(`https://mukto-chitro-server-site.vercel.app/packagedetails/location/${params.id}`),
         element: (
           <PrivateRoute>
             <PackageDetails></PackageDetails>
