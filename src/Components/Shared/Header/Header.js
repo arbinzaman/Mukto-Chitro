@@ -52,11 +52,31 @@ const Header = () => {
                 </li>
               </ul>
             </div>
+
+            <label
+              htmlFor="dashboardDrawer"
+              tabIndex={2}
+              className="btn btn-ghost xl:hidden "
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 24 24"
+                id="dashboard"
+              >
+                <path fill="none" d="M0 0h24v24H0V0z"></path>
+                <path d="M4 13h6c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v8c0 .55.45 1 1 1zm0 8h6c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1zm10 0h6c.55 0 1-.45 1-1v-8c0-.55-.45-1-1-1h-6c-.55 0-1 .45-1 1v8c0 .55.45 1 1 1zM13 4v4c0 .55.45 1 1 1h6c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1h-6c-.55 0-1 .45-1 1z"></path>
+              </svg>
+            </label>
           </div>
           <div className="navbar-center">
-
             <Link to="/">
-            <img src="https://i.ibb.co/3rLmrRK/chitrogolpo.jpg" className="h-20" alt="" />
+              <img
+                src="https://i.ibb.co/3rLmrRK/chitrogolpo.jpg"
+                className="h-20"
+                alt=""
+              />
             </Link>
           </div>
           <div className="navbar-end">
@@ -66,7 +86,7 @@ const Header = () => {
                   <img
                     src={user?.photoURL}
                     title={user?.displayName}
-                    className=" ml-5 h-10 sm:h2 rounded-full"
+                    className=" ml-auto h-10 rounded-full"
                     alt=""
                   />
                 </span>
