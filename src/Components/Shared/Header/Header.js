@@ -53,7 +53,7 @@ const Header = () => {
                 </li>
               </ul>
             </div>
-            {location.pathname === "/dashboard" && (
+            {location.pathname.startsWith("/dashboard") && (
               <label
                 htmlFor="dashboardDrawer"
                 tabIndex={2}
