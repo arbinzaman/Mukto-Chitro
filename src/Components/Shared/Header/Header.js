@@ -101,15 +101,23 @@ const Header = () => {
               </>
             ) : (
               <>
-                <Link to="/login" className="btn btn-ghost normal-case text-xl">
-                  Login
-                </Link>
-                <Link
-                  to="/register"
-                  className="btn btn-ghost normal-case text-xl"
-                >
-                  Register
-                </Link>
+                {location.pathname === "/login" || (
+                  <Link
+                    to="/login"
+                    className="btn btn-ghost normal-case text-xl"
+                  >
+                    Login
+                  </Link>
+                )}
+
+                {location.pathname === "/register" || (
+                  <Link
+                    to="/register"
+                    className="btn btn-ghost normal-case text-xl"
+                  >
+                    Register
+                  </Link>
+                )}
               </>
             )}
           </div>

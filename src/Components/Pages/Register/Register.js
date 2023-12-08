@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 
 const Register = () => {
   UseTitle("Register");
-  const {createUser} = useContext(AuthContext);
+  const { createUser } = useContext(AuthContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -20,13 +20,6 @@ const Register = () => {
     // console.log(userName,address,contact, email, password);
     const data = { userName, address, contact, email, password };
     console.log(data);
-    createUser(email, password)
-    .then(result => {
-        const user = result.user;
-        console.log(user);
-        form.reset()
-    })
-    .catch(error => console.error(error));
 
     fetch("https://mukto-chitro-server-site.vercel.app/users", {
       method: "POST",
@@ -42,6 +35,20 @@ const Register = () => {
           toast.success("User Added Successfully");
           form.reset();
           console.log(data);
+
+          createUser(email, password)
+            .then((result) => {
+              const user = result.user;
+              console.log(user);
+              form.reset();
+            })
+            .catch((error) => {
+              console.error(error);
+              toast.error(error.message);
+            });
+        } 
+        else {
+          toast.error("User Added Failed");
         }
       })
       .catch((err) => console.log(err));
